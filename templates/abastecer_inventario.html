@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abastecer Inventario</title>
+</head>
+<body>
+    <h1>Abastecer Inventario de Ingredientes</h1>
+    <ul>
+        {% for ingrediente in ingredientes %}
+            <li>
+                <strong>Nombre:</strong> {{ ingrediente.nombre }}<br>
+                <strong>Inventario Actual:</strong> {{ ingrediente.inventario }}<br>
+                <form action="{{ url_for('abastecer', ingrediente_id=ingrediente.id) }}" method="POST">
+                    <label for="cantidad">Cantidad a Abastecer:</label>
+                    <input type="number" name="cantidad" id="cantidad" min="1" required>
+                    <button type="submit">Abastecer</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

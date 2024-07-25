@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costo de Producción</title>
+</head>
+<body>
+    <h1>Costo de Producción de Productos</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                <strong>Nombre:</strong> {{ producto.nombre }}<br>
+                <strong>Tipo:</strong> {{ producto.tipo }}<br>
+                {% if producto.volumen %}
+                    <strong>Volumen:</strong> {{ producto.volumen }}<br>
+                {% endif %}
+                <strong>Costo de Producción:</strong> {{ producto.calcular_costo_produccion() }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renovar Inventario</title>
+</head>
+<body>
+    <h1>Renovar Inventario de Ingredientes</h1>
+    <ul>
+        {% for ingrediente in ingredientes %}
+            <li>
+                <strong>Nombre:</strong> {{ ingrediente.nombre }}<br>
+                <strong>Inventario Actual:</strong> {{ ingrediente.inventario }}<br>
+                <form action="{{ url_for('renovar', ingrediente_id=ingrediente.id) }}" method="POST">
+                    <button type="submit">Renovar Inventario</button>
+                </form>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

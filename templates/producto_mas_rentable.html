@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto Más Rentable</title>
+</head>
+<body>
+    <h1>Producto Más Rentable</h1>
+    {% if producto %}
+        <p><strong>Nombre:</strong> {{ producto.nombre }}</p>
+        <p><strong>Precio Público:</strong> {{ producto.precio_publico }}</p>
+        {% if producto.volumen %}
+            <p><strong>Volumen:</strong> {{ producto.volumen }}</p>
+        {% endif %}
+        <p><strong>Rentabilidad:</strong> {{ producto.calcular_rentabilidad() }}</p>
+    {% else %}
+        <p>No hay productos disponibles.</p>
+    {% endif %}
+</body>
+</html>

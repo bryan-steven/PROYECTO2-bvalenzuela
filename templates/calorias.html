@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Calorías por Producto</title>
+</head>
+<body>
+    <h1>Calorías por Producto</h1>
+    <ul>
+        {% if resultados %}
+            {% for nombre, calorias in resultados.items() %}
+                <li>{{ nombre }}: {{ calorias }} calorías</li>
+            {% endfor %}
+        {% else %}
+            <li>No se encontraron productos.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>

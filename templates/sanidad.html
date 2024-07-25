@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanidad de Ingredientes</title>
+</head>
+<body>
+    <h1>Sanidad de Ingredientes</h1>
+    <ul>
+        {% for nombre, sano in resultados.items() %}
+        <li>{{ nombre }}: {{ sano }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

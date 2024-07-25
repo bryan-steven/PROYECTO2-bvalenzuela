@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredientes de la Heladería</title>
+</head>
+<body>
+    <h1>Ingredientes Disponibles</h1>
+    <ul>
+        {% for ingrediente in ingredientes %}
+            <li>
+                <strong>Nombre:</strong> {{ ingrediente.nombre }}<br>
+                <strong>Calorias:</strong> {{ ingrediente.calorias }}<br>
+                {% if ingrediente.inventario %}
+                    <strong>Inventario:</strong> {{ ingrediente.inventario }}<br>
+                {% endif %}
+                <strong>Precio:</strong> {{ ingrediente.precio }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
