@@ -16,14 +16,12 @@ class Heladeria:
                 raise ValueError(f"Ingrediente {ingrediente.nombre} no tiene suficiente inventario.")
         
         try:
-            # Decrementar inventario
             for ingrediente in ingredientes:
                 ingrediente.inventario -= cantidad
             
-            # Realizar el commit de la transacción
             db.session.commit()
             return "¡Vendido!"
         
         except Exception as e:
-            db.session.rollback()  # Revertir cambios en caso de error
+            db.session.rollback()
             raise RuntimeError(f"Error al realizar la venta: {e}")

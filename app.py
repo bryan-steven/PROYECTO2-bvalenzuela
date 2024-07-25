@@ -116,7 +116,7 @@ def vender_producto():
     
     except ValueError as e:
         mensaje_error = str(e)
-        ingrediente_faltante = mensaje_error.split(' ')[1]  # Ajusta esto según la estructura del mensaje de error
+        ingrediente_faltante = mensaje_error.split(' ')[1] 
         return render_template('resultado.html', mensaje=f"¡Oh no! Nos hemos quedado sin {ingrediente_faltante}")
     
     except RuntimeError as e:
